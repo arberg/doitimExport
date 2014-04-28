@@ -1,3 +1,5 @@
+Doit.im export of tasks (because Doit.im still does not support it at the time of writing).
+
 In Chrome: open up the Doit.im website.
 
 (optional) Make a custom filter that will show you all tasks.
