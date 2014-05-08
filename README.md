@@ -11,3 +11,11 @@ Open up the Developer Console (option+command+i on the Mac, Ctrl-Shift-i on wind
 Paste javascript code in js-files into the console and hit enter. The task-lines will now be in the clipboard (if successful)
 
 Go into your favorite text editor and paste.
+
+
+The script exports: Task name, Priority, tags, context, Project, and notes.
+It does not export subtasks. 
+
+Links for info on Chrome Console developing:
+http://stackoverflow.com/questions/2934787/view-list-of-all-javascript-variables-in-google-chrome-console
+https://developers.google.com/chrome-developer-tools/docs/console
