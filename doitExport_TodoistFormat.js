@@ -25,9 +25,10 @@ var noTasks = TASKS.length;
 for (var i = 0; i < noTasks; i++) {
 	var task = TASKS[i]; 
 	var thisTaskLine = task.title; 
-	var thisTaskLine = thisTaskLine +" "+timeSeparator+task.attribute; 
-//	var thisTaskLine = thisTaskLine +" "+projSeparator+projLookup(task.project); 
-	var thisTaskLine = thisTaskLine +" "+ctxSeparator+contextLookup(task.context).toLowerCase().replace(/[ ]/g, ""); 
+	thisTaskLine = thisTaskLine.replace(/&quot;/g, "\"");
+	thisTaskLine = thisTaskLine +" "+timeSeparator+task.attribute; 
+	var thisTaskLine = thisTaskLine +" "+projSeparator+projLookup(task.project); 
+	thisTaskLine = thisTaskLine +" "+ctxSeparator+contextLookup(task.context).toLowerCase().replace(/[ ]/g, ""); 
 	var tags = task.tags; 
 	if (!(typeof tags === 'undefined')) {
 		var noTags = task.tags.length;
@@ -36,11 +37,13 @@ for (var i = 0; i < noTasks; i++) {
 		 	thisTaskLine =  thisTaskLine + " " + tagSeparator + lowerSpaceTagWithoutSpaces;
 		}
 	}
-	var thisTaskLine = thisTaskLine +" [[priority "+(4-task.priority)+"]]"; 
+	if (task.priority > 0) {
+		thisTaskLine = thisTaskLine +" !!"+(4-task.priority); 
+	}  	
 	if (!(typeof task.notes === 'undefined')) {
 		// replace new lines in notes with '/n', because I want one task on each line
 		var notes = task.notes.replace(/[\r\n]/g, noteNewline).replace(/[\n]/g, noteNewline);
-		var thisTaskLine = thisTaskLine +noteEnd+"[[NOTE]]: "+notes; 
+		thisTaskLine = thisTaskLine +noteEnd+"[[NOTE]]: "+notes; 
 	}
   	allTaskLines = allTaskLines + thisTaskLine + "\n";
 }
