@@ -10,7 +10,7 @@ Open up the Developer Console (option+command+i on the Mac, Ctrl-Shift-i on wind
 
 Paste javascript code in js-files into the console and hit enter. The task-lines will now be in the clipboard (if successful)
 
-Go into your favorite text editor and paste.
+Go into your favorite text editor and paste, but save file as UTF-8 (in case of special language chars)
 
 
 The script exports: Task name, Priority, tags, context, Project, and notes.
